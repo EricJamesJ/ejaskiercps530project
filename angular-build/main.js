@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>page2 works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<style>\ncode{\nbackground-color:#f5f2f0;\n}\n</style>\n<h1>How to install Angular (On windows)</h1>\n<p>Step 1: Install NPM(Node Package Manager) from this <a href=\"https://nodejs.org/en/\">link</a></p>\n<p>Step 2: Install angular-cli using NPM with this command: <code>npm install -g angular-cli</code></p>\n<p>Step 3: Create a new project with the command: <code>ng new PROJECT_NAME</code> where PROJECT_NAME is the name of your project</p>\n<p>Step 4: Use <code>ng build</code> to compile and build your project</p>\n<p>Step 5: Use <code>ng serve</code> to run your project</p>\n<h1>How to install ExpressJs</h1>\n<p>Step 1: Install Express with this cmd:<code>npm install express  --save</code></p>\n<p>Step 2: Create a <code style=\"background-color:#f5f2f0\">server.js</code> file in the root path and copy paste the following code:</p>\n<pre style=\"background-color:#f5f2f0; white-space: pre-wrap; margin-left:20px\">{{code}}</pre>\n<p>Step 3: Open <code>package.json</code> and replace the <code>start</code> command under \"scripts\" with <code>node server.js</code></p>\n<p>Step 4: Open <code>angular.json</code> and replace the <code>outputPath</code> command under \"build/options\" with <code>angular-build</code></p>\n<h1>How to deploy on heroku</h1>\n<p>Step 1: Create a Github account</p>\n<p>Step 2: Create a Heroku account</p>\n<p>Step 3: Create a new repository on Github and push this project into it</p>\n<p>Step 4: Create a new app in Heroku</p>\n<p>Step 5: Set Github as the \"Deployment method\" and link the Github repository holding your project</p>\n<p>Step 6: Enable automatic deployments</p>");
 
 /***/ }),
 
@@ -637,6 +637,19 @@ __webpack_require__.r(__webpack_exports__);
 let Page2Component = class Page2Component {
     constructor() { }
     ngOnInit() {
+        this.code =
+            "const path = require(\"path\");\n" +
+                "const express = require(\"express\");\n" +
+                "const app = express();\n" +
+                "app.use(express.static(__dirname + '/angular-build'));\n" +
+                "app.get('/*', function(req,res){\n" +
+                "	res.sendFile(path.join(__dirname, 'angular-build', 'index.html'))\n" +
+                "});\n" +
+                "// Start the app by listening on the default Heroku port\n" +
+                "var port = process.env.PORT || 8080;\n" +
+                "app.listen(port, function(){\n" +
+                "	console.log('Running on port ' + port);\n" +
+                "});";
     }
 };
 Page2Component = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
