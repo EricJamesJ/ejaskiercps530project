@@ -379,16 +379,24 @@
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function () { return AppComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            /* harmony import */ var _app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.service */ "./src/app/app.service.ts");
             var AppComponent = /** @class */ (function () {
-                function AppComponent(http) {
-                    this.http = http;
-                    this.title = this.http.get('http://ejaskiercps530project.herokuapp.com//api/cats')[0].name;
+                function AppComponent(_appService) {
+                    this._appService = _appService;
+                    this.title = "ASDF";
                 }
+                AppComponent.prototype.ngOnInit = function () {
+                    this.getFoods();
+                    this.title = this.cat.name;
+                };
+                AppComponent.prototype.getFoods = function () {
+                    var _this = this;
+                    this._appService.getCats().subscribe(function (data) { return _this.cat = data; });
+                };
                 return AppComponent;
             }());
             AppComponent.ctorParameters = function () { return [
-                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+                { type: _app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"] }
             ]; };
             AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -433,6 +441,41 @@
                     bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
                 })
             ], AppModule);
+            /***/ 
+        }),
+        /***/ "./src/app/app.service.ts": 
+        /*!********************************!*\
+          !*** ./src/app/app.service.ts ***!
+          \********************************/
+        /*! exports provided: AppService */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppService", function () { return AppService; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            var httpOptions = {
+                headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json' })
+            };
+            var AppService = /** @class */ (function () {
+                function AppService(http) {
+                    this.http = http;
+                }
+                // Uses http.get() to load data from a single API endpoint
+                AppService.prototype.getCats = function () {
+                    return this.http.get('/api/cat');
+                };
+                return AppService;
+            }());
+            AppService.ctorParameters = function () { return [
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+            ]; };
+            AppService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+                    providedIn: 'root'
+                })
+            ], AppService);
             /***/ 
         }),
         /***/ "./src/environments/environment.ts": 

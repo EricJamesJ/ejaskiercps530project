@@ -1,6 +1,8 @@
 import { Component, Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable'
 import { HttpClient } from '@angular/common/http'
+import {AppService} from './app.service';
+
 
 export interface Cat {
   name: string
@@ -12,9 +14,16 @@ export interface Cat {
   styleUrls: ['./app.component.scss']
 })
 
-
 export class AppComponent {
-  constructor(private http: HttpClient) {}
+  constructor(private _appService: AppService) {}
+  cat;
 
-  title = this.http.get<Cat[]>('http://ejaskiercps530project.herokuapp.com//api/cats')[0].name;
+  title = "ASDF";
+  ngOnInit() {
+    this.getFoods();
+  }
+  
+  getFoods() {
+    this._appService.getCats().subscribe(data => {this.cat = data;	this.title = this.cat.name;});
+  }
 }
