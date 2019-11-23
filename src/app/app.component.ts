@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-
+import { Component, Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable'
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-root',
