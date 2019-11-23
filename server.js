@@ -7,8 +7,3 @@ res.sendFile(path.join(__dirname, 'angular-build', 'index.html'))
 });
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
-app.route('/api/title').get((req, res) => {
-  res.send({
-    title: { name: 'lilly' },
-  })
-});
