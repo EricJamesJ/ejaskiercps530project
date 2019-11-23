@@ -28,4 +28,8 @@ export class AppComponent {
   getFoods() {
     this._appService.getCats().subscribe(data => {this.cat = data;	this.title = this.cat.name;});
   }
+  
+  onClickProjectReq(){
+    window.open("https://www.scs.ryerson.ca/~cps530/project/cps530_prj_f19.html", "_blank");
+  }
 }
