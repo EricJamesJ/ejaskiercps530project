@@ -5,5 +5,10 @@ app.use(express.static(__dirname + '/angular-build'));
 app.get('/*', function(req,res){
 res.sendFile(path.join(__dirname, 'angular-build', 'index.html'))
 });
+app.route('/api/cats').get((req, res) => {
+  res.send({
+    cats: [{ name: 'lilly' }, { name: 'lucy' }],
+  })
+});
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
