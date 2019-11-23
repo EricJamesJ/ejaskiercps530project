@@ -11,4 +11,4 @@ app.route('/api/title').get((req, res) => {
   res.send({
     title: { name: 'lilly' },
   })
-})
+});
