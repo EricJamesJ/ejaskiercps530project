@@ -14,6 +14,7 @@ export interface Cat {
 
 
 export class AppComponent {
+  constructor(private http: HttpClient) {}
 
   title = this.http.get<Cat[]>('http://ejaskiercps530project.herokuapp.com//api/cats')[0].name;
 }
