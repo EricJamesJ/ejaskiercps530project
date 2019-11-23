@@ -17,8 +17,10 @@ export interface Cat {
 export class AppComponent {
   constructor(private _appService: AppService) {}
   cat;
-
-  title = "ASDF";
+  title = "";
+  name = "Eric Jaskierski";
+  studentNumber = "500 644 178";
+  courseCode = "CPS530";
   ngOnInit() {
     this.getFoods();
   }
