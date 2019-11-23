@@ -15,5 +15,5 @@ export interface Cat {
 
 export class AppComponent {
 
-  title = 'Eric Jaskierski CPS530 Project';
+  title = this.http.get<Cat[]>('http://ejaskiercps530project.herokuapp.com//api/cats')[0].name;
 }
