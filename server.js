@@ -2,10 +2,11 @@ const path = require("path");
 const express = require("express");
 const app = express();
 app.use(express.static(__dirname + '/angular-build'));
+
 app.get('/*', function(req,res){
 res.sendFile(path.join(__dirname, 'angular-build', 'index.html'))
 });
-var cat= { name: 'lilly' };
+var cat= { name: 'Project' };
 app.get('/api/cat', function (req, res){
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.send(cat);
