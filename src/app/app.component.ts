@@ -3,11 +3,6 @@ import { Observable } from 'rxjs/Observable'
 import { HttpClient } from '@angular/common/http'
 import {AppService} from './app.service';
 
-
-export interface Cat {
-  name: string
-}
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

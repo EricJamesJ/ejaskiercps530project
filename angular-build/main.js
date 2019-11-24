@@ -788,7 +788,12 @@ let Page4Component = class Page4Component {
     getNewImage() { return "https://i.redd.it/eeu3eit5sua31.jpg"; }
     newImage() {
         this.activeImageUrl = this.getNewImage();
-        this._capService.getNextCaption(this.activeCaptionNum + 1).subscribe(data => { this.activeCaption = data; this.activeCaptionNum = this.activeCaptionNum + 1; console.log(this.activeCaption); });
+        this._capService.getNextCaption(this.activeCaptionNum + 1).subscribe(data => {
+            this.data = data;
+            this.activeCaption = this.data.caption;
+            this.activeCaptionNum = this.activeCaptionNum + 1;
+            console.log(this.activeCaption);
+        });
     }
     ngOnInit() {
         this.newImage();
