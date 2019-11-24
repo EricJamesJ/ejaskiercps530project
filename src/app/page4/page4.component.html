@@ -1,1 +1,5 @@
-<p>page4 works!</p>
+  <div style="cursor: pointer;"(click)="newImage()" class="bg" [ngStyle]="{'background-image': 'url('+activeImageUrl+')'}">
+    <div class="strokeme center" >
+      {{activeCaption}}
+    </div>
+  </div>
