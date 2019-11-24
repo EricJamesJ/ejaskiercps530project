@@ -28,14 +28,14 @@ var captions = [
 	"is coming from a server call that is being made every time you click",
 	"Well, thats it",
 	"That's the app",
-	"If you refresh, the text will reset from the beginning",
+	"If you refresh or go to another page, the text will reset from the beginning",
 	"but for now, this will be the last text caption",
 	"",
 	"",
 	"",
 	"",
 	"BOO",
-	"Did I scare you?"
+	"Did I scare you?",
 	"No, oh, sorry",
 	"Ok, I'll stop with the text"
 ];
