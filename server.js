@@ -5,7 +5,25 @@ app.use(express.static(__dirname + '/angular-build'));
 
 app.get('/', function(req,res){
 res.sendFile(path.join(__dirname, 'angular-build', 'index.html'))
-});
+})
+app.get('/page1', function(req,res){
+res.sendFile(path.join(__dirname, 'angular-build', 'index.html'))
+})
+app.get('/page2', function(req,res){
+res.sendFile(path.join(__dirname, 'angular-build', 'index.html'))
+})
+app.get('/page3', function(req,res){
+res.sendFile(path.join(__dirname, 'angular-build', 'index.html'))
+})
+app.get('/page4', function(req,res){
+res.sendFile(path.join(__dirname, 'angular-build', 'index.html'))
+})
+app.get('/page5', function(req,res){
+res.sendFile(path.join(__dirname, 'angular-build', 'index.html'))
+})
+app.get('/page6', function(req,res){
+res.sendFile(path.join(__dirname, 'angular-build', 'index.html'))
+})
 var captions = [
 	"HELLO!",
 	"Your're probably wondering what this is",
