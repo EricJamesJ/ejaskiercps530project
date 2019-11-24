@@ -1,6 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable'
-import { HttpClient } from '@angular/common/http'
+import { Component } from '@angular/core';
 import { CaptionServiceService } from './caption-service.service'
 
 
@@ -17,13 +15,11 @@ export class Page4Component {
   data;
   constructor(private _capService: CaptionServiceService) {}
 
-  getNewImage(){return "https://i.redd.it/eeu3eit5sua31.jpg"}
-
   newImage(){
-	this.activeImageUrl = this.getNewImage();
 	this._capService.getNextCaption(this.activeCaptionNum + 1).subscribe(data => {
 		this.data = data;
 		this.activeCaption = this.data.caption; 
+		this.activeImageUrl = this.data.url;
 		this.activeCaptionNum = this.activeCaptionNum + 1; 
 		console.log(this.activeCaption);
 	});
@@ -33,4 +29,3 @@ export class Page4Component {
 	this.newImage();
   }
 }
-
