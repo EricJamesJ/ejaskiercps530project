@@ -9,7 +9,7 @@ import { CaptionServiceService } from './caption-service.service'
 })
 
 export class Page4Component {
-  activeImageUrl = "https://i.redd.it/eeu3eit5sua31.jpg";
+  activeImageUrl = "";
   activeCaption;
   activeCaptionNum = -1;
   data;

@@ -1,1 +1,17 @@
-<h1>How to make a webpage look pretty with Angular</h1>
+<h1>How to make a webpage with Angular</h1>
+<p>Making a webpage with Angular is very similar to making a webpage without. The actual benefits of Angular come in when building a proper website that utilize multiple pages or components</p>
+<p>But to make a simple webpage just follow these steps</p>
+<p>Step 1: In the previous page you were told to run <code>ng new PROJECT_NAME</code> to create a new Angular project, when you run it, it asks you how you want your style files</p>
+<img src="https://i.gyazo.com/33d608ef82b0b474fe4f73d639adc468.png">
+<p>I chose SCSS, but the default CSS is also fine</p>
+<p>Step 2: Edit your .component.ts file so that it looks something like this</p>
+<img src="https://i.gyazo.com/7df9bd4575ffd4fd17b1954a435e31b0.png">
+<p>Step 3: Edit your scss file so that it looks like this</p>
+<img src="https://i.gyazo.com/cf9014cbb1a64c0eef96dd7b5961d53b.png">
+<p>Step 4: Edit your html page so that it looks like this</p>
+<img src="https://i.gyazo.com/299f147951d379b5cf804bcb6e44f91a.png">
+<p>The final result will be a webpage with a title and an img looking like this:</p>
+<h1>{{title}}</h1>
+<img class="halfImg" src={{imgUrl}}>
+<p>Obviously this very barebones, but the idea was to showcase that making a basic webpage is as easy with Angular as it is without</p>
+<p>However, with Angular you are able to reference objects or other kinds of data from your typescript code in your html</p>
